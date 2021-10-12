@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+@font-face {
+    font-family: 'We Come In Peace BB Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('We Come In Peace BB Regular'), url('we-come-in-peace-bb.regular.woff') format('woff');
+}
+
+:root {
+    --link-col: #66ccff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+}
+
+a {
+    color: var(--link-col);
+    text-decoration: none;
+}
+
+p:not(first-of-type) {
+    margin-top: 10px;
+}
+
+p:nth-last-of-type(2) {
+    flex-grow: 1;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    padding: 5% 10px 20% 10px;
+}
+
+main > * {
+    margin: 0 5px 0 5px;
+}
+
+sidebar- {
+    min-width: 20%;
+}
+
+menu- {
+    min-width: 10%;
+}
+
+.story {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+scribbles- {
+    color: #ffcc00;
+}
+
+.untrans span {
+    font-family: 'We Come In Peace BB Regular';
+}
+
+w- {
+    position: relative;
+}
+
+w-:not(:last-of-type)::after {
+    content: ' ';
+}
+
+.notepad {
+    position: absolute;
+    right: -300px;
+    top: -50px;
+    display: none;
+    z-index: 10;
+    width: 300px;
+}
+
+sidebar- .notepad {
+    right: auto;
+    left: -300px;
+}
+
+.notepad > p {
+    color: #fff;
+    text-align: left;
+}
+
+.notepad > * {
+    width: 100%;
+    text-align: center;
+}
+
+.notepad h1 {
+    font-size: 16pt;
+    margin-bottom: 10px;
+    font-family: 'We Come In Peace BB Regular';
+}
+
+.visible-pad {
+    background-color: #777;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+sidebar- .visible-pad {
+    border-radius: 0 10px 10px 0;
+}
+
+.visible-pad .notepad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #777;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
