@@ -54,7 +54,7 @@ menu- {
     min-width: 10%;
 }
 
-.story {
+#story {
     display: flex;
     flex-grow: 1;
     flex-direction: column;

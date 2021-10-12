@@ -1,13 +1,6 @@
-// let saveData = document.cookie;
-// let testData;
-
-// function save() {
-//     document.cookie = `testData=${testData}`;
-//     console.log('saved');
-//     console.log(document.cookie);
-// }
-
-// =====----- dictonary -----===== //
+// =====---------------------------------------------------------------------------------===== //
+// =====----------------------------------- dictonary -----------------------------------===== //
+// =====---------------------------------------------------------------------------------===== //
 let dictonary = [
     {
         eng: 'blue',
@@ -35,12 +28,7 @@ let dictonary = [
     }
 ];
 
-function getEntry(word) {
-    return dictonary.filter(w => {
-        return w.eng === word;
-    })[0];
-}
-
+// =====----- utilities -----===== //
 function updateDictionary(eng, trans, notes) {
     let entry = getEntry(eng);
     entry.userTrans = trans;
@@ -51,10 +39,62 @@ function updateDictionary(eng, trans, notes) {
     });
 }
 
-// =====-----===== //
-// =====----- word -----===== //
-// =====-----===== //
+function getEntry(word) {
+    return dictonary.filter(w => {
+        return w.eng === word;
+    })[0];
+}
 
+// =====----- saving -----===== //
+function saveDict() {
+    localStorage.setItem('dictionary', JSON.stringify(dictonary));
+}
+
+function loadDict() {
+    dictionary = JSON.parse(localStorage.getItem('dictionary'));
+}
+
+
+
+
+
+
+
+
+
+// =====---------------------------------------------------------------------------------===== //
+// =====----------------------------------- scribbles -----------------------------------===== //
+// =====---------------------------------------------------------------------------------===== //
+class Scribbles extends HTMLElement {
+    constructor() {
+        super();
+        this.initialProcessing();
+    }
+
+    initialProcessing() {
+        // read innerHTML and split into word array
+        let separated = this.innerHTML.split(' ');
+        this.innerHTML = '';
+        separated.forEach(word => {
+            let newWord = new Word;
+            newWord.innerHTML = `<span>${word}</span>`;
+            this.appendChild(newWord);
+        });
+    }
+
+} customElements.define('scribbles-', Scribbles);
+
+
+
+
+
+
+
+
+
+// =====----------------------------------------------------------------------------===== //
+// =====----------------------------------- word -----------------------------------===== //
+// =====----------------------------------------------------------------------------===== //
 class Word extends HTMLElement {
     constructor() {
         super();
@@ -108,31 +148,14 @@ class Word extends HTMLElement {
 
 } customElements.define('w-', Word);
 
-// =====-----===== //
-// =====----- scribbles -----===== //
-// =====-----===== //
 
-// divide innerHTML into array of individual words. check those words against eng in dictionary and render userTrans instead wherever it exists.
-// when rendering, enclose every word and punctuation mark in tags according to their translation status or whether they're punctuation (?)
-// or maybe only enclose untranslated words in tags to define their font. Punctuation needs to match regular text, though
 
-// maybe just never enclose punctuation in tags: <scribbles->ingredients</scribbles->: </scribbles->fish</scribbles->
-class Scribbles extends HTMLElement {
-    constructor() {
-        super();
-        this.initialProcessing();
-    }
 
-    initialProcessing() {
-        // read innerHTML and split into word array
-        let separated = this.innerHTML.split(' ');
-        this.innerHTML = '';
-        separated.forEach(word => {
-            let newWord = new Word;
-            newWord.innerHTML = `<span>${word}</span>`;
-            this.appendChild(newWord);
-        });
-    }
 
-} customElements.define('scribbles-', Scribbles);
 
+
+
+
+// =====--------------------------------------------------------------------------------===== //
+// =====----------------------------------- page-nav -----------------------------------===== //
+// =====--------------------------------------------------------------------------------===== //

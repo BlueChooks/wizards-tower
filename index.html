@@ -7,13 +7,12 @@
     <body>
         <main>
             <menu-></menu->
-            <div class="story">
-                <p>The drawer is labelled <scribbles->blue feathers blue</scribbles->. It seems to be full of fluffy things in various shades of cobalt.</p>
-                <p>The drawer is labelled <scribbles->blue feathers blue</scribbles->. It seems to be full of fluffy things in various shades of cobalt.</p>
-                <p>The drawer is labelled <scribbles->blue feathers blue</scribbles->. It seems to be full of fluffy things in various shades of cobalt.</p>
+            <div id="story">
                 <p>The drawer is labelled <scribbles->blue feathers blue</scribbles->. It seems to be full of fluffy things in various shades of cobalt.</p>
                 
                 <p>Take <item->levitation potion</item->.</p>
+
+                <p><a href="./story/new-page.html">new page</a></p>
             </div>
 
             <sidebar-><div class="inv"></div><div class="gen-notes"></div></sidebar->
@@ -22,7 +21,40 @@
         <script src="elements/menu-.js"></script>
         <script src="elements/sidebar-.js"></script>
         <script>
-            // page
+            // let dataToSave = 'save me';
+            
+            // console.log(localStorage.getItem('saveData'));
+            // localStorage.setItem('saveData', dataToSave);
+            // console.log(localStorage.getItem('saveData'));
+            
+            // localStorage.setItem('saveData', 'new save');
+            // console.log(localStorage.getItem('saveData'));
+            
+            // localStorage.removeItem('saveData');
+            // console.log(localStorage.getItem('saveData'));
+
+
+
+            
+            // let dictionary = [
+            //     {
+            //         eng: 'word',
+            //         scribble: 'bdlw',
+            //         userTrans: 'word?',
+            //         userNotes: 'maybe word'
+            //     },
+            //     {
+            //         eng: 'blue',
+            //         scribble: 'vurq',
+            //         userTrans: 'blue?',
+            //         userNotes: 'maybe blue'
+            //     }
+            // ];
+
+            // localStorage.setItem('dictionary', JSON.stringify(dictionary));
+            // console.log(localStorage.getItem('dictionary'));
+
+            // console.log(JSON.parse(localStorage.getItem('dictionary'))[0].scribble);
         </script>
     </body>
 </html>
