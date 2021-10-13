@@ -1,0 +1,30 @@
+{
+"New story page for Wizard's Tower": {
+	"prefix": "storypage",
+	"body": [
+		"<!DOCTYPE html>",
+		"<html>",
+		"<head>",
+		"    <title>Wizard's Tower</title>",
+		"    <link rel=\"stylesheet\" href=\"../styles/style.css\" />",
+		"</head>",
+		"<body>",
+		"    <main>",
+		"        <menu-></menu->",
+		"        <div id=\"story\">",
+		"            <p>map page</p>",
+		"        </div>",
+		"",
+		"        <div id=\"sidebar\"></div>",
+		"    </main>",
+		"    <script src=\"../dictionary.js\"></script>",
+		"    <script src=\"../sidebar.js\"></script>",
+		"    <script src=\"../menu.js\"></script>",
+		"    <script src=\"../other.js\"></script>",
+		"",
+		"</body>",
+		"</html>"
+	],
+	"description": "New story page for Wizard's Tower"
+}
+}

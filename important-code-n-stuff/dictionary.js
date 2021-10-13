@@ -1,7 +1,55 @@
 // =====---------------------------------------------------------------------------------===== //
-// =====----------------------------------- dictionary -----------------------------------===== //
+// =====---------------------------------- dictionary -----------------------------------===== //
 // =====---------------------------------------------------------------------------------===== //
 let dictionary = [
+    {
+        eng: 'orange1',
+        scribble: 'orange',
+        userTrans: 'orange',
+        userNotes: ''
+    },
+    {
+        eng: 'text1',
+        scribble: 'text',
+        userTrans: 'text',
+        userNotes: ''
+    },
+    {
+        eng: 'great',
+        scribble: 'jpile',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'throne',
+        scribble: 'bqsizr',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'room',
+        scribble: 'azzp',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'swift',
+        scribble: 'zasrt',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'water',
+        scribble: 'bnver',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'river',
+        scribble: 'jshcj',
+        userTrans: '',
+        userNotes: ''
+    },
     {
         eng: 'blue',
         scribble: 'psmp',
@@ -11,6 +59,24 @@ let dictionary = [
     {
         eng: 'feathers',
         scribble: 'pbjcubxz',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'ash',
+        scribble: 'xaz',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'insect',
+        scribble: 'gvbwzu',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'wings',
+        scribble: 'qzlnd',
         userTrans: '',
         userNotes: ''
     },

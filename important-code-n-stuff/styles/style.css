@@ -35,9 +35,9 @@ p:not(first-of-type) {
     margin-top: 10px;
 }
 
-p:nth-last-of-type(2) {
+/* p:nth-last-of-type(2) {
     flex-grow: 1;
-}
+} */
 
 main {
     display: flex;
@@ -49,7 +49,7 @@ main > * {
     margin: 0 5px 0 5px;
 }
 
-sidebar- {
+#sidebar {
     min-width: 20%;
 }
 
@@ -89,7 +89,7 @@ w-:not(:last-of-type)::after {
     width: 300px;
 }
 
-sidebar- .notepad {
+#sidebar .notepad {
     right: auto;
     left: -300px;
 }
@@ -116,7 +116,7 @@ sidebar- .notepad {
     border-radius: 10px 0 0 10px;
 }
 
-sidebar- .visible-pad {
+#sidebar .visible-pad {
     border-radius: 0 10px 10px 0;
 }
 
@@ -127,4 +127,13 @@ sidebar- .visible-pad {
     background-color: #777;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+item-pickup, item-pickup > scribbles- {
+    cursor: pointer;
+    color: var(--link-col);
+}
+
+.hidden {
+    display: none;
 }

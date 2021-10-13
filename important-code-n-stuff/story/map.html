@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard's Tower</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+    <main>
+        <menu-></menu->
+        <div id="story">
+            <p>It took you a while to make sense of this map. It's labelled in some sort of code or language you've never encountered
+            before, and only vaguely resembles the surrounding landscape. But now you can see that the wonky circle labelled <scribbles->great throne room</scribbles->, must be the Great Throne Room, that ancient hollowed mountain. That would make the long straight line labelled <scribbles->swift water river</scribbles-> the Swift Water River, and <scribbles->blue river</scribbles->, the squiggly line intersecting it, must be the Blue River.</p>
+            <p>You should take a moment to translate those words. Hover over the orange word to bring up the translation window, and type in what you think it must mean. <!-- If you're not sure, don't worry - you can take notes and change your translation
+            any time. And if you're really stuck, you can find the correct translation with a flash of insight. But your insight is
+            limited, so use it sparingly.</p> -->
+            <p id="enter-tower" class="hidden"><a>Enter the tower</a></p>
+        </div>
+
+        <div id="sidebar"></div>
+    </main>
+    <script src="../dictionary.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../menu.js"></script>
+    <script src="../other.js"></script>
+    <script>
+        let link = document.querySelector('#enter-tower');
+        let words = ['room', 'river', 'swift'];
+
+        function checkTranslations() {
+            try {
+                words.forEach(word => {
+                    if (getEntry(word).userTrans === '') {
+                        throw word;
+                    }
+                });
+                link.classList.remove('hidden');
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        checkTranslations();
+        
+        document.addEventListener('keyup', () => {
+            checkTranslations();
+        });
+    </script>
+
+</body>
+</html>
