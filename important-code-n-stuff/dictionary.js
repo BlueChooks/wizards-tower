@@ -91,6 +91,42 @@ let dictionary = [
         scribble: 'awcvumuvptr',
         userTrans: '',
         userNotes: ''
+    },
+    {
+        eng: 'bed',
+        scribble: 'ual',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'recipes',
+        scribble: 'paxfnay',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'ingredients',
+        scribble: 'vbfqivqbp',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'colour',
+        scribble: 'wuburm',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'effects',
+        scribble: 'caacpqb',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'brief',
+        scribble: 'ybqox',
+        userTrans: '',
+        userNotes: ''
     }
 ];
 

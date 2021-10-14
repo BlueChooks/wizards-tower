@@ -35,9 +35,9 @@ p:not(first-of-type) {
     margin-top: 10px;
 }
 
-/* p:nth-last-of-type(2) {
+.separator {
     flex-grow: 1;
-} */
+}
 
 main {
     display: flex;
