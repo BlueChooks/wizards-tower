@@ -82,15 +82,17 @@ function getCurrentIngredients() {
 }
 
 function gainItem(name) { // changes given item held status to true
-    getItem(name).held = true;
-    saveInv();
-    location.reload();
+    if (!getItem(name).held) {
+        getItem(name).held = true;
+        saveInv();
+        location.reload();
+    }
 }
 
 function removeItem(name) { // changes given item held status to false
     getItem(name).held = false;
     saveInv();
-    location.reload();
+    // location.reload();
 }
 
 function renderInventory() { // populates inventory panel with held items. this function is a mess

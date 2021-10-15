@@ -13,10 +13,14 @@
             <p>You are standing over the old cauldron.</p>
             <p>It's a little bit rusted around the base, but otherwise seems perfectly usable.</p>
 
-            <!-- <p class="add-ing">Add an ingredient<span class="hidden"></span></p>
-            <p class="add-ing">Add an ingredient<span class="hidden"></span></p>
-            <p class="add-ing">Add an ingredient<span class="hidden"></span></p> -->
+            <div class="separator"></div>
+
             <div class="adders"></div>
+            <div class="removers"></div>
+
+            <p id="cook">Light the cauldron</p>
+            
+            <div class="separator"></div>
 
             <p><a href="pnrm.html">Back</a></p>
         </div>
@@ -28,55 +32,124 @@
     <script src="../../menu.js"></script>
     <script src="../../other.js"></script>
     <script>
-        // let adders = document.querySelectorAll('p.add-ing');
-        // // console.log(adders);
+        let validCombinations = [
+            {
+                recipe: ['feathers', 'insect wings', 'ash'],
+                result: 'cauldron-result-lvpn'
+            }
+        ];
 
-        // adders.forEach(adder => {
-        //     adder.addEventListener('mouseover', () => {
-        //         // console.log(adder);
-        //         adder.querySelector('span').classList.remove('hidden');
-        //         adder.querySelector('span').innerHTML = '';
-        //         populateSpan(adder.querySelector('span'));
-        //     });
-        // });
+        // console.log(checkValidCombo(['feathers', 'insect wings', 'ash']) ? 'yes' : 'no');
+        let itemsInCauldron = [];
 
-        // function getRelevantInv() {
-        //     let relevantInv = [];
-        //     getCurrentInv().forEach(item => {
-        //         if (item.ingredient) {
-        //             relevantInv += item;
-        //         }
-        //     });
-        //     return relevantInv;
-        // }
+        document.querySelector('#cook').addEventListener('click', () => {
+            // remove items from inventory
+            // check if items in cauldron are a valid combination
+            // navigate to appropriate potion-created page
+            itemsInCauldron.forEach(item => {
+                removeItem(item);
+            });
 
-        // function populateSpan(span) {
-        //     span.innerHTML = '';
-        //     // console.log(span);
-        //     getRelevantInv().forEach(item => {
-        //         span.innerHTML += item.translatable ? `<scribbles->${item.name}</scribbles>` : item.name;
-        //     });
-        // }
+            if (checkValidCombo(itemsInCauldron)) {
+                window.location.replace(`${checkValidCombo(itemsInCauldron)}.html`);
+            } else {
+                window.location.replace(`cauldron-result-failed.html`);
+            }
+        });
 
+        function checkValidCombo(added) {
+                for (combo of validCombinations) {
+                if (combo.recipe.length === added.length) {
+                        for (item of added) {
+                        if (!combo.recipe.includes(item)) {
+                            return false;
+                        }
+                    };
+                } else {
+                    return false;
+                }
+                return combo.result;
+            };
+        }
 
+        
 
-        // maybe I need another custom element
         class Adder extends HTMLElement {
-            constructor() {
+            constructor(itemName) {
                 super();
-                this.item = this.getAttribute('item');
-                
+                this.itemName = itemName;
+            }
+
+            connectedCallback() {
+                this.fillHTML();
+
                 this.addEventListener('click', () => {
-                    // remove item from inventory
-                    // add item to cauldron
-                    // update displayed items
-                    // update this.item
-                    // update this.innerHTML
-                    // remove event listener
-                    // addEventListener to remove item from cauldron
+                    this.createRemover();
+                    this.remove();
                 });
             }
+
+            fillHTML() {
+                this.innerHTML = `Add ${getItem(this.itemName).translatable ? '<scribbles->' + this.itemName + '</scribbles->' : this.itemName}`;
+            }
+
+            createRemover() {
+                document.querySelector('.removers').appendChild(new Remover(this.itemName));
+                itemsInCauldron.push(this.itemName);
+                console.log('itemsInCauldron', itemsInCauldron);
+            }
         } customElements.define('adder-', Adder);
+
+
+        class Remover extends HTMLElement {
+            constructor(itemName) {
+                super();
+                this.itemName = itemName;
+            }
+
+            connectedCallback() {
+                this.fillHTML();
+
+                this.addEventListener('click', () => {
+                    this.createAdder();
+                    this.remove();
+                });
+            }
+
+            fillHTML() {
+                this.innerHTML = `Remove ${getItem(this.itemName).translatable ? '<scribbles->' + this.itemName + '</scribbles->' : this.itemName}`;
+            }
+
+            createAdder() {
+                document.querySelector('.adders').appendChild(new Adder(this.itemName));
+                
+                // remove from itemsInCauldron
+                for (let i = 0; i < itemsInCauldron.length; i++) {
+                    // console.log(i, itemsInCauldron[i], this.itemName)
+                    if (itemsInCauldron[i] === this.itemName) {
+                        itemsInCauldron.splice(i, 1);
+                    }
+                }
+                console.log('itemsInCauldron', itemsInCauldron);
+            }
+        } customElements.define('remover-', Remover);
+
+
+
+
+
+        // populate adders
+        getCurrentIngredients().forEach(item => {
+            document.querySelector('.adders').appendChild(new Adder(item.name));
+
+            // document.querySelector('.adder:last-of-type').addEventListener('click', e => { // not attaching to each = only the last in the list overall
+            //     console.log('clicked', item.name);
+            //     document.querySelector('.removers').innerHTML += createRemover(item);
+            //     // add functionality to remover
+            //     removeItem(item.name);
+            //     e.target.remove();
+            // });
+        });
     </script>
 
 </body>

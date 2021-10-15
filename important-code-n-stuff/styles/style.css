@@ -26,9 +26,10 @@ body {
     color: #fff;
 }
 
-a {
+a, #cook, adder-, remover-, a > scribbles- {
     color: var(--link-col);
     text-decoration: none;
+    cursor: pointer;
 }
 
 p:not(first-of-type) {

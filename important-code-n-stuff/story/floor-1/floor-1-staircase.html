@@ -9,7 +9,8 @@
         <menu-></menu->
         <div id="story">
             <p>Upon approaching the staircase, you realise that it has collapsed into a pile of splintered wood and rubble. The second-floor landing seems sturdy enough, but it's out-of-reach for now.</p>
-
+            <a id="solution" class="hidden" href="floor-1-staircase-clear.html">Use <scribbles->levitation potion</scribbles-></a>
+            <div class="separator"></div>
             <p><a href="hub1.html">To the ground floor.</a></p>
         </div>
 
@@ -19,6 +20,12 @@
     <script src="../../sidebar.js"></script>
     <script src="../../menu.js"></script>
     <script src="../../other.js"></script>
+    <script>
+        console.log(getCurrentInv());
+        if (getCurrentInv().includes(getItem('levitation potion'))) {
+            document.querySelector('#solution').classList.remove('hidden');
+        }
+    </script>
 
 </body>
 </html>

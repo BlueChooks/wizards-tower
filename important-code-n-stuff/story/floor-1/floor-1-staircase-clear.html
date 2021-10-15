@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard's Tower</title>
+    <link rel="stylesheet" href="../../styles/style.css" />
+</head>
+<body>
+    <main>
+        <menu-></menu->
+        <div id="story">
+            <p>You drink the bottle of <scribbles->levitation potion</scribbles-> and instantly start floating upward. With some frantic arm-flapping and scrabbling at the walls, you manage to manoeuvre your way onto the second-floor landing just before gravity reasserts itself.</p>
+            <p>Taking some rope from your bag, you tie it around a sturdy-looking torch-sconce and throw the length of it down the ruined stairs. You should have a much easier time getting up and down now.</p>
+            <p>Congratulations! You have completed the playable part of the Wizard's Tower pre-alpha release. Thanks for playing!</p>
+
+            <div class="separator"></div>
+            <p><a href="hub1.html">Go back downstairs</a></p>
+            <p id="cook">Clear your save data and return to the beginning</p>
+        </div>
+
+        <div id="sidebar"></div>
+    </main>
+    <script src="../../dictionary.js"></script>
+    <script src="../../sidebar.js"></script>
+    <script src="../../menu.js"></script>
+    <script src="../../other.js"></script>
+    <script>
+        removeItem('levitation potion');
+
+        document.querySelector('#cook').addEventListener('click', () => {
+            localStorage.clear();
+            location.replace('../../../wizards-tower.html');
+        });
+    </script>
+
+</body>
+</html>
