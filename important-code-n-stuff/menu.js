@@ -4,7 +4,6 @@ class Menu extends HTMLElement {
         this.innerHTML = `
             <button>wipe save</button>
             <button>view dict</button>
-            <button>return to index</button>
         `;
         
         this.querySelectorAll('button')[0].addEventListener('click', () => {
@@ -15,8 +14,8 @@ class Menu extends HTMLElement {
             console.log(localStorage.getItem('dictionary'));
         });
 
-        this.querySelectorAll('button')[2].addEventListener('click', () => {
-            window.location.replace('./../../wizards-tower.html');
-        });
+        // this.querySelectorAll('button')[2].addEventListener('click', () => {
+        //     window.location.replace('./../../wizards-tower.html');
+        // });
     }
 } customElements.define('menu-', Menu);

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wizard's Tower</title>
+    <link rel="stylesheet" href="../../styles/style.css" />
+</head>
+
+<body>
+    <main>
+        <menu-></menu->
+        <div id="story">
+            <p>You are standing over the old cauldron.</p>
+            <p>It's a little bit rusted around the base, but otherwise seems perfectly usable.</p>
+
+            <!-- <p class="add-ing">Add an ingredient<span class="hidden"></span></p>
+            <p class="add-ing">Add an ingredient<span class="hidden"></span></p>
+            <p class="add-ing">Add an ingredient<span class="hidden"></span></p> -->
+            <div class="adders"></div>
+
+            <p><a href="pnrm.html">Back</a></p>
+        </div>
+
+        <div id="sidebar"></div>
+    </main>
+    <script src="../../dictionary.js"></script>
+    <script src="../../sidebar.js"></script>
+    <script src="../../menu.js"></script>
+    <script src="../../other.js"></script>
+    <script>
+        // let adders = document.querySelectorAll('p.add-ing');
+        // // console.log(adders);
+
+        // adders.forEach(adder => {
+        //     adder.addEventListener('mouseover', () => {
+        //         // console.log(adder);
+        //         adder.querySelector('span').classList.remove('hidden');
+        //         adder.querySelector('span').innerHTML = '';
+        //         populateSpan(adder.querySelector('span'));
+        //     });
+        // });
+
+        // function getRelevantInv() {
+        //     let relevantInv = [];
+        //     getCurrentInv().forEach(item => {
+        //         if (item.ingredient) {
+        //             relevantInv += item;
+        //         }
+        //     });
+        //     return relevantInv;
+        // }
+
+        // function populateSpan(span) {
+        //     span.innerHTML = '';
+        //     // console.log(span);
+        //     getRelevantInv().forEach(item => {
+        //         span.innerHTML += item.translatable ? `<scribbles->${item.name}</scribbles>` : item.name;
+        //     });
+        // }
+
+
+
+        // maybe I need another custom element
+        class Adder extends HTMLElement {
+            constructor() {
+                super();
+                this.item = this.getAttribute('item');
+                
+                this.addEventListener('click', () => {
+                    // remove item from inventory
+                    // add item to cauldron
+                    // update displayed items
+                    // update this.item
+                    // update this.innerHTML
+                    // remove event listener
+                    // addEventListener to remove item from cauldron
+                });
+            }
+        } customElements.define('adder-', Adder);
+    </script>
+
+</body>
+
+</html>

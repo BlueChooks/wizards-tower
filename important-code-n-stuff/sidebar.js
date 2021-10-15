@@ -5,21 +5,25 @@ let inventory = [
     {
         name: 'feathers',
         translatable: true,
+        ingredient: true,
         held: false
     },
     {
         name: 'ash',
         translatable: true,
+        ingredient: true,
         held: false
     },
     {
         name: 'insect wings',
         translatable: true,
+        ingredient: true,
         held: false
     },
     {
         name: 'levitation potion',
         translatable: true,
+        ingredient: false,
         held: false
     }
 ];
@@ -50,6 +54,31 @@ function getItem(name) { // returns the item in inventory[] with corresponding n
     return inventory.filter(item => {
         return item.name === name;
     })[0];
+}
+
+function getCurrentInv() {
+    let currentInv = [];
+
+    inventory.forEach(item => {
+        if (item.held) {
+            // currentInv += item;
+            currentInv.push(item);
+        }
+    });
+
+    return currentInv;
+}
+
+function getCurrentIngredients() {
+    let currentIngredients = [];
+
+    inventory.forEach(item => {
+        if (item.held && item.ingredient) {
+            currentIngredients.push(item);
+        }
+    });
+
+    return currentIngredients;
 }
 
 function gainItem(name) { // changes given item held status to true
