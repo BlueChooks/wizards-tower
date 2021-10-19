@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard's Tower</title>
+    <link rel="stylesheet" href="../../styles/style.css" />
+</head>
+<body>
+    <main>
+        <menu-></menu->
+        <div id="story">
+            <p>You have opened the drawer labelled <scribbles->sugar</scribbles->.</p>
+            <p>A pile of crystalline white grains is inside, which seems to have partially hardened over the years. Levering a chunk off the main pile leaves your fingers tasting sweet.</p>
+
+            <p id="pickup" class="hidden"><item-pickup item="sugar">Take <scribbles->sugar</scribbles-></item-pickup></p>
+            <p id="held" class="hidden">You already have <scribbles->sugar</scribbles-> in your inventory.</p>
+
+            <div class="separator"></div>
+
+            <p><a href="cabinet.html">Close the drawer</a></p>
+            <p><a href="pnrm.html">Back to the room</a></p>
+        </div>
+
+        <div id="sidebar"></div>
+    </main>
+    <script src="../../dictionary.js"></script>
+    <script src="../../sidebar.js"></script>
+    <script src="../../menu.js"></script>
+    <script src="../../other.js"></script>
+    <script>
+        let pickup = document.querySelector('#pickup');
+        let held = document.querySelector('#held');
+
+        checkHeld();
+
+        pickup.addEventListener('click', () => {
+            checkHeld();
+        });
+
+        function checkHeld() {
+            if (!getItem('sugar').held) {
+                pickup.classList.remove('hidden');
+                held.classList.add('hidden');
+            } else {
+                pickup.classList.add('hidden');
+                held.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>

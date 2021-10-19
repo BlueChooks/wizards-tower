@@ -1,21 +1,40 @@
 // =====---------------------------------------------------------------------------------===== //
 // =====----------------------------------- inventory -----------------------------------===== //
 // =====---------------------------------------------------------------------------------===== //
-let inventory = [
+let inventory = [ // keep untranslatable items at top
+    {
+        name: 'ash',
+        translatable: false,
+        ingredient: true,
+        held: false
+    },
     {
         name: 'feathers',
         translatable: true,
         ingredient: true,
         held: false
     },
+    
     {
-        name: 'ash',
+        name: 'insect wings',
         translatable: true,
         ingredient: true,
         held: false
     },
     {
-        name: 'insect wings',
+        name: 'flowers',
+        translatable: true,
+        ingredient: true,
+        held: false
+    },
+    {
+        name: 'sugar',
+        translatable: true,
+        ingredient: true,
+        held: false
+    },
+    {
+        name: 'cinnamon',
         translatable: true,
         ingredient: true,
         held: false
@@ -29,10 +48,25 @@ let inventory = [
 ];
 
 let sidebar = document.getElementById('sidebar');
-sidebar.innerHTML = '<div id="inv"></div><textarea id="gen-notes" rows="20" cols="30"></textarea>';
+sidebar.innerHTML = `
+                    <h1 class="sidebar-heading">Inventory</h1>
+                    <div id="inv"></div>
+                    <h1 class="sidebar-heading">Notes</h1>
+                    <textarea id="gen-notes" rows="20" cols="30">${localStorage.getItem('gen-notes') ? localStorage.getItem('gen-notes') : ''}</textarea>
+                    <button id="reset">Reset Game</button>
+                    `;
 
 let inv = document.getElementById('inv');
 let notepad = document.getElementById('gen-notes');
+
+document.querySelector('#reset').addEventListener('click', () => {
+    wipeSave();
+    location.replace('reset.html');
+});
+
+notepad.addEventListener('keyup', () => {
+    localStorage.setItem('gen-notes', notepad.value);
+});
 
 if (localStorage.getItem('inventory')) { // load inventory from local storage
     loadInv();

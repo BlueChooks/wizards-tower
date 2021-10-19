@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 @import url("./menu.css");
 @import url("./sidebar.css");
 
@@ -11,7 +11,15 @@
 }
 
 :root {
+    --bg-col: #333;
+    --popup-bg-col: #555;
+    --side-bg-col: #555;
+    --secondary-side-bg-col: #777;
+
+    --text-col: #fff;
+    --text-fade-col: #999;
     --link-col: #66ccff;
+    --scrib-col: #ffcc00;
 }
 
 * {
@@ -22,8 +30,8 @@
 }
 
 body {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--bg-col);
+    color: var(--text-col);
 }
 
 a, #cook, adder-, remover-, a > scribbles- {
@@ -40,33 +48,26 @@ p:not(first-of-type) {
     flex-grow: 1;
 }
 
+.hidden {
+    display: none;
+}
+
 main {
     display: flex;
     height: 100vh;
-    padding: 5% 10px 20% 10px;
-}
-
-main > * {
-    margin: 0 5px 0 5px;
-}
-
-#sidebar {
-    min-width: 20%;
-}
-
-menu- {
-    min-width: 10%;
+    padding: 3% 3% 10% 3%;
 }
 
 #story {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    /* justify-content: space-between; */
+    padding: 0 20px;
 }
 
+/* =====----- scribbles -----===== */
 scribbles- {
-    color: #ffcc00;
+    color: var(--scrib-col);
 }
 
 .untrans span {
@@ -90,13 +91,8 @@ w-:not(:last-of-type)::after {
     width: 300px;
 }
 
-#sidebar .notepad {
-    right: auto;
-    left: -300px;
-}
-
 .notepad > p {
-    color: #fff;
+    color: var(--text-col);
     text-align: left;
 }
 
@@ -112,20 +108,16 @@ w-:not(:last-of-type)::after {
 }
 
 .visible-pad {
-    background-color: #777;
+    background-color: var(--popup-bg-col);
     padding: 10px;
     border-radius: 10px 0 0 10px;
-}
-
-#sidebar .visible-pad {
-    border-radius: 0 10px 10px 0;
 }
 
 .visible-pad .notepad{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #777;
+    background-color: var(--popup-bg-col);
     padding: 10px 20px;
     border-radius: 10px;
 }
@@ -135,6 +127,46 @@ item-pickup, item-pickup > scribbles- {
     color: var(--link-col);
 }
 
-.hidden {
-    display: none;
+/* =====----- documents -----===== */
+.doc {
+    margin-left: 50px;
+}
+
+.mum-handwriting {
+    font-style: italic;
+}
+
+.araxus-handwriting {
+    font-style: italic;
+}
+
+.secretary-handwriting {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 13pt;
+}
+
+
+/* =====----- cauldron -----===== */
+.ing-container {
+    display: flex;
+    flex-direction: row;
+    /* padding: 0 30px; */
+    /* background-color: var(--side-bg-col); */
+}
+
+.adders, .removers {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    min-width: 300px;
+    min-height: 200px;
+    padding: 10px;
+}
+
+.adders {
+    border-right: 1px solid var(--text-fade-col);
+}
+
+adder-, remover- {
+    margin: 5px;
 }

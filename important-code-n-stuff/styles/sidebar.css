@@ -1,3 +1,69 @@
 #sidebar {
-    background-color: #555;
+    background-color: var(--side-bg-col);
+    min-width: 20%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+#sidebar .notepad {
+    right: auto;
+    left: -300px;
+}
+
+#sidebar .visible-pad {
+    border-radius: 0 10px 10px 0;
+}
+
+/* =====----- inv -----===== */
+
+#inv {
+    display: flex;
+    flex-direction: column;
+    /* border-bottom: 1px solid var(--text-fade-col); */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    /* padding-left: 10px; */
+    margin-bottom: 10px;
+    background-color: var(--secondary-side-bg-col);
+}
+
+#inv > * {
+    margin: 5px 0;
+}
+
+.sidebar-heading {
+    font-size: 16pt;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+}
+
+.sidebar-heading:not(:first-of-type) {
+    padding-top: 20px;
+}
+
+/* =====----- notepad -----===== */
+
+#gen-notes {
+    border-radius: 10px;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+#reset {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--text-fade-col);
+    /* color: var(--text-col); */
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#reset:hover {
+    background-color: var(--scrib-col);
 }

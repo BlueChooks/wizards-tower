@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wizard's Tower</title>
+    <link rel="stylesheet" href="../../styles/style.css" />
+</head>
+<body>
+    <main>
+        <menu-></menu->
+        <div id="story">
+            <p>The fireplace hasn't been lit in many decades, and it clearly hasn't been cleaned for even longer. Ash is piled so high behind the grille that it spills out onto the hearthstones.</p>
+
+            <p id="pickup" class="hidden"><item-pickup item="ash">Take ash</item-pickup></p>
+            <p id="held" class="hidden">You already have ash in your inventory.</p>
+
+            <p>A crumpled <a href="rejection-letter.html">piece of paper</a> is on the floor beside the fireplace.</p>
+
+            <div class="separator"></div>
+
+            <p><a href="brm.html">Back to the room</a></p>
+        </div>
+
+        <div id="sidebar"></div>
+    </main>
+    <script src="../../dictionary.js"></script>
+    <script src="../../sidebar.js"></script>
+    <script src="../../menu.js"></script>
+    <script src="../../other.js"></script>
+    <script>
+        let pickup = document.querySelector('#pickup');
+        let held = document.querySelector('#held');
+
+        checkHeld();
+
+        pickup.addEventListener('click', () => {
+            checkHeld();
+        });
+
+        function checkHeld() {
+            if (!getItem('ash').held) {
+                pickup.classList.remove('hidden');
+                held.classList.add('hidden');
+            } else {
+                pickup.classList.add('hidden');
+                held.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>

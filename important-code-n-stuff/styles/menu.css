@@ -1,5 +1,6 @@
 menu- {
-    background-color: #555;
+    background-color: var(--side-bg-col);
     display: flex;
     flex-direction: column;
+    min-width: 10%;
 }

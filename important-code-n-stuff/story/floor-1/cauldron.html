@@ -15,8 +15,10 @@
 
             <div class="separator"></div>
 
-            <div class="adders"></div>
-            <div class="removers"></div>
+            <div class="ing-container">
+                <div class="adders"></div>
+                <div class="removers"></div>
+            </div>
 
             <p id="cook">Light the cauldron</p>
             
@@ -36,10 +38,14 @@
             {
                 recipe: ['feathers', 'insect wings', 'ash'],
                 result: 'cauldron-result-lvpn'
+            },
+            {
+                recipe: ['sugar', 'cinnamon', 'flowers'],
+                result: 'cauldron-result-hug'
             }
         ];
 
-        // console.log(checkValidCombo(['feathers', 'insect wings', 'ash']) ? 'yes' : 'no');
+        
         let itemsInCauldron = [];
 
         document.querySelector('#cook').addEventListener('click', () => {
@@ -58,18 +64,17 @@
         });
 
         function checkValidCombo(added) {
+            if (added.length === 3) {
                 for (combo of validCombinations) {
-                if (combo.recipe.length === added.length) {
-                        for (item of added) {
-                        if (!combo.recipe.includes(item)) {
-                            return false;
-                        }
-                    };
-                } else {
-                    return false;
+                    if (combo.recipe.includes(added[0]) && combo.recipe.includes(added[1]) && combo.recipe.includes(added[2])) {
+                        return combo.result;
+                    }
                 }
-                return combo.result;
-            };
+            } else {
+                return false;
+            }
+
+            return false;
         }
 
         

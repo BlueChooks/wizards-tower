@@ -58,7 +58,7 @@ let dictionary = [
     },
     {
         eng: 'feathers',
-        scribble: 'pbjcubxz',
+        scribble: 'pxatjxim',
         userTrans: '',
         userNotes: ''
     },
@@ -123,6 +123,24 @@ let dictionary = [
         userNotes: ''
     },
     {
+        eng: 'flowers',
+        scribble: 'yclpqbua',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'sugar',
+        scribble: 'azlid',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'cinnamon',
+        scribble: 'bovvwmtx',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
         eng: 'brief',
         scribble: 'ybqox',
         userTrans: '',
@@ -147,7 +165,6 @@ function updateEntry(eng, trans, notes) {
 }
 
 function updateWords() { // upadate all <w-> tags
-    console.log('updateWords');
     document.querySelectorAll('w-').forEach(w => {
         w.updateContent();
     });
@@ -191,7 +208,8 @@ class Word extends HTMLElement {
     }
     
     connectedCallback() {
-        this.entry = getEntry(this.querySelector('span').innerHTML); //
+        // this.entry = getEntry(this.querySelector('span').innerHTML); //
+        this.entry = getEntry(this.innerText); //
         this.addNotepad();
         this.updateContent();
 
@@ -222,7 +240,7 @@ class Word extends HTMLElement {
         let notepad = `
             <div class="notepad">
                 <h1 class="untrans">${this.entry.scribble}</h1>
-                <input type="text" value="${this.entry.userTrans !== '' ? this.entry.userTrans : ''}"" placeholder="your translation" />
+                <input type="text" value="${this.entry.userTrans !== '' ? this.entry.userTrans : ''}" placeholder="your translation" />
                 <p>Notes</p>
                 <textarea placeholder="notes" rows="10" cols="30">${this.entry.userNotes !== '' ? this.entry.userNotes : ''}</textarea>
             </div>
@@ -256,7 +274,7 @@ class Scribbles extends HTMLElement {
 
     initialProcessing() {
         // read innerHTML and split into word array
-        let separated = this.innerHTML.split(' ');
+        let separated = this.innerText.split(' ');
         this.innerHTML = '';
         separated.forEach(word => {
             let newWord = new Word;

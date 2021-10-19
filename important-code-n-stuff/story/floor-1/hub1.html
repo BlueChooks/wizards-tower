@@ -8,9 +8,9 @@
     <main>
         <menu-></menu->
         <div id="story">
-            <p>You find yourself in a round stone chamber not much different from any other home you've robbed over the years. A pair of shoes and a coat are by the door, covered in the dust and mold of decades.</p>
+            <p>You find yourself in a round stone chamber not much different from any other home you've robbed over the years. A pair of shoes and a coat are by the door, covered in the dust and mold of decades. A similarly-dusty table holds the stub of a candle and a <a href="mum-letter1.html">letter</a>.</p>
 
-            <p>Directly across from the entrance there seems to be a <a href="floor-1-staircase.html">staircase</a>. A <a>door on your left</a> is labelled <scribbles->bed room</scribbles->, and another <a href="pnrm.html">door to your right</a> is labelled <scribbles->potion room</scribbles->.</p>
+            <p>Directly across from the entrance there seems to be a <a id="stair-link" href="floor-1-staircase.html">staircase</a>. A <a href="brm.html">door on your left</a> is labelled <scribbles->bed room</scribbles->, and another <a href="pnrm.html">door to your right</a> is labelled <scribbles->potion room</scribbles->.</p>
         </div>
 
         <div id="sidebar"></div>
@@ -19,6 +19,13 @@
     <script src="../../sidebar.js"></script>
     <script src="../../menu.js"></script>
     <script src="../../other.js"></script>
+    <script>
+        let link = document.getElementById('stair-link');
+
+        if (checkLevelCleared(1)) {
+            link.setAttribute('href', './floor-1-staircase-clear.html');
+        }
+    </script>
 
 </body>
 </html>
