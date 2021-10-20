@@ -14,7 +14,12 @@ let inventory = [ // keep untranslatable items at top
         ingredient: true,
         held: false
     },
-    
+    {
+        name: 'cinnamon',
+        translatable: true,
+        ingredient: true,
+        held: false
+    },
     {
         name: 'insect wings',
         translatable: true,
@@ -29,12 +34,6 @@ let inventory = [ // keep untranslatable items at top
     },
     {
         name: 'sugar',
-        translatable: true,
-        ingredient: true,
-        held: false
-    },
-    {
-        name: 'cinnamon',
         translatable: true,
         ingredient: true,
         held: false
