@@ -4,10 +4,10 @@
 @import url("./sidebar.css");
 
 @font-face {
-    font-family: 'We Come In Peace BB Regular';
+    font-family: 'Temphis Brick';
     font-style: normal;
     font-weight: normal;
-    src: local('We Come In Peace BB Regular'), url('we-come-in-peace-bb.regular.woff') format('woff');
+    src: local('Temphis Brick'), url('Temphis Brick.woff') format('woff');
 }
 
 :root {
@@ -71,15 +71,19 @@ scribbles- {
 }
 
 .untrans span {
-    font-family: 'We Come In Peace BB Regular';
+    font-family: 'Temphis Brick';
 }
 
 w- {
     position: relative;
 }
 
-w-:not(:last-of-type)::after {
+/* w-:not(:last-of-type)::after {
     content: ' ';
+} */
+
+w-:not(:last-child) {
+    margin-right: 5px;
 }
 
 .notepad {
@@ -104,7 +108,7 @@ w-:not(:last-of-type)::after {
 .notepad h1 {
     font-size: 16pt;
     margin-bottom: 10px;
-    font-family: 'We Come In Peace BB Regular';
+    font-family: 'Temphis Brick';
 }
 
 .visible-pad {
