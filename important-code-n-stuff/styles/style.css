@@ -32,6 +32,7 @@
 body {
     background-color: var(--bg-col);
     color: var(--text-col);
+    margin: 0 5vw;
 }
 
 a, #cook, adder-, remover-, a > scribbles- {
@@ -41,7 +42,7 @@ a, #cook, adder-, remover-, a > scribbles- {
 }
 
 p:not(first-of-type) {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .separator {

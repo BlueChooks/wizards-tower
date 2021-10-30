@@ -145,6 +145,66 @@ let dictionary = [
         scribble: 'ybqox',
         userTrans: '',
         userNotes: ''
+    },
+    {
+        eng: 'salt',
+        scribble: 'ngqo',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'belladonna',
+        scribble: 'jniiqfzppq',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'leaves',
+        scribble: 'nbsubw',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'nightshade',
+        scribble: 'jiayvsoqmn',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'berries',
+        scribble: 'sabbowm',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'withering',
+        scribble: 'ouscbquzl',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'fig',
+        scribble: 'mnb',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'blooming',
+        scribble: 'panncir',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'green',
+        scribble: 'wqiib',
+        userTrans: '',
+        userNotes: ''
+    },
+    {
+        eng: 'black',
+        scribble: 'zvdgu',
+        userTrans: '',
+        userNotes: ''
     }
 ];
 
